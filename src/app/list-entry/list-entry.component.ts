@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'list-entry',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-entry.component.css']
 })
 export class ListEntryComponent implements OnInit {
-  printing = false;
+  @Input() studentCollection: Array<object> = [];
+  @Input() printing: boolean;
+
   listStudents(): void{
     this.printing = true;
     console.log('Showing stored students');
